@@ -7,6 +7,8 @@ import { defaultStartPath } from "Constants/defaultValues";
 
 import AppLocale from "../lang";
 import MainRoute from "Routes";
+
+import Login from '../routes/login';
 import error from "Routes/error";
 
 import "Assets/css/vendor/bootstrap.min.css";
@@ -41,6 +43,7 @@ class App extends Component {
           <Fragment>
             <Switch>
               <Route path={`${match.url}app`} component={MainRoute} />
+              <Route path={'/login'} component={Login} />
               <Route path={`/error`} component={error} />
               <Redirect to="/error" />
             </Switch>

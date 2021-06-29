@@ -1,5 +1,6 @@
 export const ThemeColors = () => {
     let rootStyle = getComputedStyle(document.body);
+    
     return {
        themeColor1 : rootStyle.getPropertyValue("--theme-color-1").trim(),
        themeColor2 : rootStyle.getPropertyValue("--theme-color-2").trim(),

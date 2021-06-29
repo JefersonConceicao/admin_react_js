@@ -8,6 +8,8 @@ import BreadcrumbContainer from "Components/BreadcrumbContainer";
 const start = ({
   match
 }) => {
+    console.log(match);
+
     return (
       <Fragment>
         <Row>

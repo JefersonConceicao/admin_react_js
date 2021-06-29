@@ -9,6 +9,7 @@ import {
   DropdownMenu,
   Input
 } from "reactstrap";
+
 import IntlMessages from "Util/IntlMessages";
 import PerfectScrollbar from "react-perfect-scrollbar";
 
@@ -21,7 +22,6 @@ import {
 } from "Redux/actions";
 
 import notifications from "Data/topnav.notifications.json";
-
 import { menuHiddenBreakpoint,searchPath,localeOptions } from "Constants/defaultValues";
 
 
@@ -41,6 +41,7 @@ class TopNav extends Component {
       searchKeyword: ""
     };
   }
+
   isInFullScreen = () => {
     return (
       (document.fullscreenElement && document.fullscreenElement !== null) ||
@@ -81,9 +82,11 @@ class TopNav extends Component {
       this.search();
     }
   };
+
   addEventsSearch() {
     document.addEventListener("click", this.handleDocumentClickSearch, true);
   }
+
   removeEventsSearch() {
     document.removeEventListener("click", this.handleDocumentClickSearch, true);
   }
@@ -117,11 +120,13 @@ class TopNav extends Component {
       });
     }
   }
+
   handleSearchInputChange(e) {
     this.setState({
       searchKeyword: e.target.value
     });
   }
+
   handleSearchInputKeyPress(e) {
     if (e.key === 'Enter') {
       this.search() 
@@ -164,7 +169,6 @@ class TopNav extends Component {
       isInFullScreen: !isInFullScreen
     });
   };
-
 
   menuButtonClick(e, menuClickCount, containerClassnames) {
     e.preventDefault();

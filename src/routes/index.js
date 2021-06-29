@@ -3,12 +3,12 @@ import { Route, withRouter, Switch, Redirect } from "react-router-dom";
 
 import TopNav from "Containers/TopNav";
 import Sidebar from "Containers/Sidebar";
+import { connect } from "react-redux";
 
 import gogo from "./gogo";
 import secondMenu from "./second-menu";
 import thirdSingle from "./third-single";
 import Profile from './profile';
-import { connect } from "react-redux";
 
 class MainApp extends Component {
   constructor(props) {
