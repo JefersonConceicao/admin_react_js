@@ -108,7 +108,7 @@ class Sidebar extends Component {
     return nextClasses;
   }
 
-  getContainer() {
+  getContainer(){
     return ReactDOM.findDOMNode(this);
   }
 
@@ -137,11 +137,13 @@ class Sidebar extends Component {
       document.addEventListener(event, this.handleDocumentClick, true)
     );
   }
+
   removeEvents() {
     ["click", "touchstart"].forEach(event =>
       document.removeEventListener(event, this.handleDocumentClick, true)
     );
   }
+
   setSelectedLiActive() {
     const oldli = document.querySelector(".sub-menu  li.active");
     if (oldli != null) {
@@ -255,19 +257,6 @@ class Sidebar extends Component {
               option={{ suppressScrollX: true, wheelPropagation: false }}
             >
               <Nav vertical className="list-unstyled">
-                <NavItem
-                  className={classnames({
-                    active: ((this.state.selectedParentMenu == "gogo" && this.state.viewingParentMenu=="" )|| this.state.viewingParentMenu=="gogo")
-                  })}
-                >
-                  <NavLink
-                    to="/app/gogo/start"
-                    onClick={() => this.changeViewingParentMenu("gogo")}
-                  >
-                    <i className="simple-icon-grid" />{" "}
-                    Dashboard
-                  </NavLink>
-                </NavItem>
                 <NavItem 
                   className={classnames({
                     active: (( this.state.selectedParentMenu == "profile" && this.state.viewingParentMenu == "") || 
@@ -282,33 +271,6 @@ class Sidebar extends Component {
                     Perfil
                   </NavLink>
                 </NavItem>
-                <NavItem
-                  className={classnames({
-                    active: ((this.state.selectedParentMenu == "second-menu" && this.state.viewingParentMenu=="" )|| this.state.viewingParentMenu=="second-menu")
-                  })}
-                >
-                  <NavLink
-                    to="/app/second-menu"
-                    onClick={e => this.openSubMenu(e, "second-menu")}
-                  >
-                    <i className="iconsmind-Chemical-3" />{" "}
-                    <IntlMessages id="menu.second-menu" />
-                  </NavLink>
-                </NavItem>
-                <NavItem
-                  className={classnames({
-                    active: ((this.state.selectedParentMenu == "third-single" && this.state.viewingParentMenu=="" )|| this.state.viewingParentMenu=="third-single")
-                  })}
-                >
-                  <NavLink
-                     to="/app/third-single"
-                    onClick={()=>this.changeViewingParentMenu('third-single')}
-                    data-flag="third-single">
-                    <i className="iconsmind-Space-Needle" />{" "}
-                      <p> Terceira opção </p>
-                  </NavLink>
-
-                </NavItem>
               </Nav>
             </PerfectScrollbar>
           </div>
@@ -321,21 +283,7 @@ class Sidebar extends Component {
             >
               <Nav
                 className={classnames({
-                  "d-block": ((this.state.selectedParentMenu == "gogo" && this.state.viewingParentMenu=="" )|| this.state.viewingParentMenu=="gogo")
-                })}
-                data-parent="gogo"
-              >
-                <NavItem>
-                  <NavLink to="/app/gogo/start">
-                    <i className="simple-icon-paper-plane" />{" "}
-                    <IntlMessages id="menu.start" />
-                  </NavLink>
-                </NavItem>
-              </Nav>
-
-              <Nav
-                className={classnames({
-                  "d-block": ((this.state.selectedParentMenu == "second-menu" && this.state.viewingParentMenu=="" )|| this.state.viewingParentMenu=="second-menu")
+                  "d-block": ((this.state.selectedParentMenu == "second-menu" && this.state.viewingParentMenu=="")|| this.state.viewingParentMenu=="second-menu")
                 })}
                 data-parent="second-menu"
               >

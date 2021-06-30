@@ -47,7 +47,7 @@ const Login = () => {
                                             color="secondary"
                                             className="btn-shadow"
                                             size="lg"
-                                            onClick={() => console.log("submit form")}
+                                            onClick={() => window.location.href = '/app/profile'}
                                         > 
                                             Login
                                         </Button>

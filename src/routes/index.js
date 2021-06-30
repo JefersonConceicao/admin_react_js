@@ -5,9 +5,6 @@ import TopNav from "Containers/TopNav";
 import Sidebar from "Containers/Sidebar";
 import { connect } from "react-redux";
 
-import gogo from "./gogo";
-import secondMenu from "./second-menu";
-import thirdSingle from "./third-single";
 import Profile from './profile';
 
 class MainApp extends Component {
@@ -24,9 +21,6 @@ class MainApp extends Component {
         <main>
           <div className="container-fluid">
             <Switch>
-              <Route path={`${match.url}/gogo`} component={gogo} />
-              <Route path={`${match.url}/second-menu`} component={secondMenu} />
-              <Route path={`${match.url}/third-single`} component={thirdSingle} />
               <Route path={`${match.url}/profile`} component={Profile} />
               <Redirect to="/error" />
             </Switch>
@@ -36,6 +30,7 @@ class MainApp extends Component {
     );
   }
 }
+
 const mapStateToProps = ({ menu }) => {
   const { containerClassnames } = menu;
   return { containerClassnames };

@@ -27,10 +27,15 @@ color options :
 class App extends Component {
   render() {
     const { location, match, locale } = this.props;
-    const currentAppLocale = AppLocale[locale];
-    
+    const currentAppLocale = AppLocale['pt'];
+    const auth = false;
+
     if (location.pathname === '/'  || location.pathname==='/app'|| location.pathname==='/app/') {
-      return (<Redirect to={defaultStartPath} />);
+        if(auth){
+          return (<Redirect to={'/app/profile'} />);
+        }else{
+          return(<Redirect to={'/login'}/>)
+        } 
     }
 
     return (
@@ -42,7 +47,7 @@ class App extends Component {
         >
           <Fragment>
             <Switch>
-              <Route path={`${match.url}app`} component={MainRoute} />
+              <Route path={`${match.url}app/`} component={MainRoute} />
               <Route path={'/login'} component={Login} />
               <Route path={`/error`} component={error} />
               <Redirect to="/error" />

@@ -8,4 +8,5 @@ const EsLang = {
     locale: 'es-ES',
     data: appLocaleData
 };
+
 export default EsLang;
